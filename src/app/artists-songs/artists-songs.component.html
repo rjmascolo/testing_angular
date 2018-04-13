@@ -1,0 +1,16 @@
+<p>
+  <input #artistName >
+  <button (click)="add(artistName.value); artistName.value=''" >
+    Add Artist
+  </button>
+</p>
+<div *ngFor="let artist of artists">
+  {{ artist.name }}
+  <button (click)="deleteArtist(artist)">Delete</button>
+  <app-song-by-artist [songs]="artist.songs" ></app-song-by-artist>
+  <!-- <ul>
+    <li *ngFor="let song of artist.songs">
+      {{ song.name }}
+    </li>
+  </ul> -->
+</div>
